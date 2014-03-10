@@ -1,0 +1,22 @@
+.popup.small-popup
+  = close_link
+  = popup_title current_user.username
+  = flashes :notice, :error, :warning, :alert
+  .title.green.text-left
+    %h3 Track Upload
+  .popup-holder
+    .track-form
+      = simple_form_for [:user, @track], :html => { :multipart => true, :class => @track.errors.present? ? 'errors' : nil } do |f|
+        = f.error_notification
+        = render "shared/error_messages", :target => @track
+        %fieldset
+          .simple-view
+            .row
+              = f.label :media, "Upload track file"
+              .file
+                = f.file_field :media, :class => 'button'
+                = f.hidden_field :media_cache
+                .button-fake
+                  %input{:class => "fake-input", :placeholder => "Choose File...", :type => "text"}
+                  %span.btn Browse...
+        = f.button :submit, :class => 'btn-update', :value => "Upload"

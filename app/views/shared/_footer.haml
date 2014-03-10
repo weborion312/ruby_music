@@ -1,0 +1,37 @@
+/ Footer
+%footer.row
+  %a.contract{:href => "#"}
+    %img{:alt => "", :src => "../../assets/contract-btn.png"}/
+  #player
+    %img.player-image{:alt => "", :src => "../../assets/track-image.png"}/
+    .track-info
+      %span.title Title for the track being played currently
+      %span.time 0:00:00
+    .controls
+      %a.fb{:href => "#"} fb
+      %a.play{:href => "#"} play
+      %a.ff{:href => "#"} ff
+      %a.pause{:href => "#"} pause
+    .progressbar
+      .range
+      .handle
+  #bottom-menu
+    %nav
+      %a.home{:href => "#"} Home
+      %a.profiles{:href => "#"} Profiles
+      %a.tracks{:href => "#"} Tracks
+      %a.broadcasts{:href => "#"} Broadcasts
+      %a.radio{:href => "#"} Radio
+      %a.charts{:href => "#"} Charts
+  #bottom-pages
+    %nav
+      %a.options{:href => "#"}
+        %span.list-icon
+        %span Options
+        %span.arrow-up
+      %a.page{:href => "#"} About
+      %a.page{:href => "#"} News
+      %a.page{:href => "#"} Privacy/Terms
+      %a.page{:href => "#"} Contact Us
+%script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", :type => "text/javascript"}
+%script{:src => "http://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.3/jquery.backstretch.min.js"}

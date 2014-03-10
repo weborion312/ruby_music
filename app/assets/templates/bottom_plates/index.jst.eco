@@ -1,0 +1,37 @@
+<div class="middle">
+  <nav class="plates">
+    <table>
+      <tbody><tr></tr>
+        <tr><td class="home">
+            <a href="#"><br>
+              <span>Home</span>
+            </a>
+          </td>
+          <td class="profiles">
+            <a href="#"><br>
+              <span>Profiles</span>
+            </a>
+          </td>
+          <td class="tracks">
+            <a href="#"><br>
+              <span>Tracks</span>
+            </a>
+          </td>
+          <td class="broadcasts">
+            <a href="#"><br>
+              <span>Broadcasts</span>
+            </a>
+          </td>
+          <td class="radios">
+            <a href="#"><br>
+              <span>Radios</span>
+            </a>
+          </td>
+          <td class="charts">
+            <a href="#"><br>
+              <span>Charts</span>
+            </a>
+          </td>
+    </tr></tbody></table>
+  </nav>
+</div>

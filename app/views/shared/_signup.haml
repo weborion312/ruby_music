@@ -1,0 +1,84 @@
+#signup-popup.popup
+  #logo-small
+    %img{:alt => "", :src => "../../assets/logo-small.png"}/
+  %a#close.cancel-button.close Close
+  .left
+    .popup-title
+      %h2 Create your OpJam account...
+    #signin-form
+      %form{:action => "", :method => "post"}
+        %fieldset
+          %input{:name => "username", :placeholder => "Username", :type => "text"}/
+          %input{:name => "email", :placeholder => "Email", :type => "email"}/
+          %input{:name => "password", :placeholder => "Password", :type => "password"}/
+          %input{:name => "confirm-password", :placeholder => "Confirm your password", :type => "password"}/
+          .buttons
+            %a{:class => "close cancel", :href => "#"}
+              %span.icon
+              %span Cancel
+            %a{:class => "submit", :href => "#"}
+              %span.icon
+              %span Sign me up!
+    #signin-opjam
+      %h3
+        Already have an account?
+        %a.signin-open{:href => "#"} Sign in!
+  .right
+    .popup-title
+      %h2 ...or start listening to try us out!
+    #sample-tracks
+      %ul.tracks-list
+        %li.track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+        %li.track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+        %li.track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+        %li.track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+        %li.track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+        %li.track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+        %li.track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+        %li.track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+      #help-video
+        %iframe{:allowfullscreen => "", :frameborder => "0", :height => "119", :src => "http://www.youtube.com/embed/P8aIhJCAvjw", :width => "195"}
+      #help-track
+        %h3 Need some help?
+        .track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause
+        .track.poster
+          %a{:href => "#"}
+            %img{:alt => "", :src => "../../assets/track-image.png"}/
+          %a.play{:href => "#"} Play
+          %a.pause{:href => "#"} Pause

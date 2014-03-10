@@ -1,0 +1,11 @@
+production:
+  google:
+    key: UA-29319474-2
+staging:
+  google:
+    key: UA-29319474-1
+uat:
+  google:
+    key: UA-29319474-1
+development:
+test:

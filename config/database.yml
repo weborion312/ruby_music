@@ -1,0 +1,26 @@
+common: &COMMON
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  encoding: utf8
+
+production: &PRODUCTION
+  <<: *COMMON
+  database: webjam
+  username: root
+  password: 
+  host: localhost
+
+staging:
+  <<: *PRODUCTION
+
+uat:
+  <<: *PRODUCTION
+
+development:
+  <<: *PRODUCTION
+  database: Opjamdev
+
+test: &test
+  <<: *PRODUCTION
+  database: Opjamtest

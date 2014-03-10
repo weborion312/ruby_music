@@ -1,0 +1,29 @@
+.title.orange.text-left
+  - if @profile == current_user
+    = link_to '(Click to Manage)', user_broadcasts_url, :class => 'edit-track'
+  %h2 Broadcasts
+.popup-holder
+  .profile
+    - if recent_tracks.present?
+      .products-block
+        .holder.scrollable
+          .scroll-content
+            %ul.products-list
+              - recent_tracks.each do |track|
+                %li
+                  .products-box
+                    .visual
+                      - if track.artwork.present?
+                        = link_to (image_tag track.artwork.img64.url, :width => '43', :height => '45'), '#!'+track_path(track)
+
+                    - if @profile == current_user
+                      = link_to 'edit', edit_user_track_path(track), :class => 'edit'
+                    .text-holder
+                      - if track.artist.present?
+                        %span= track.artist
+                      - if track.duration.present?
+                        %span= "#{track.duration} is the track duration"
+                      - if track.tags.present?
+                        %span= track.tags
+    - if @profile == current_user
+      = link_to 'Upload', new_user_track_path, :class => 'profile-upload-button'

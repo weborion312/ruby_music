@@ -1,0 +1,12 @@
+<%= active_admin_form_for(@track, :url => pull_or_restore_admin_track_url(@track), :html => { :method => :post }) do |f|
+  f.inputs do
+    f.input :pulled_reason, :label => "Reason"
+  end
+  f.actions do
+    if @track.pulled?
+      f.button :submit "Restore Track"
+    else
+      f.button :submit "Pull Track"
+    end
+  end
+end %>

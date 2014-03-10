@@ -1,0 +1,31 @@
+.products {
+   width: 100%;
+   overflow: hidden;
+   .column {
+      float: right;
+      width: 612px;
+      &:first-child {
+         float: left; } }
+   .holder {
+      background: asset-url('design/bg-products.png', 'images') no-repeat;
+      width: 612px;
+      height: 263px;
+      margin-bottom: 4px; }
+   .load {
+      text-align: right;
+      padding: 0 12px; } }
+.products-block {
+   background: asset-url('design/bg-products-block.png', 'images') no-repeat;
+   width: 556px;
+   padding:17px 11px 17px 17px;
+   margin:0 -5px 14px -10px;
+   height: 488px; 
+   .scroll-content {
+      width:562px !important; }
+   .holder {
+      height:486px;
+      position:relative;
+      overflow:hidden;
+      padding-right:6px; } }
+.products-list {
+   list-style:none; margin:0; padding:0; }

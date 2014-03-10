@@ -1,0 +1,33 @@
+.acceptance-reset-form {
+   height: 1%;
+   overflow: hidden;
+   margin: 0px auto;
+   padding-left: 20px;
+   @import 'forms_text';
+   .row {
+      width: 100%;
+      overflow: hidden;
+      padding-top: 12px; }
+   input {
+      &[type='password'], &[type='text'] {
+         font-weight: normal !important; } }
+   label {
+      display: block;
+      height: 1%;
+      overflow: hidden;
+      line-height: 17px; }
+   input[type='submit'] {
+      background: asset-url('design/btn-password-reset.png', 'images') no-repeat;
+      background-size: 320px 41px;
+      width: 320px;
+      height: 41px;
+      display: block;
+      margin: 0 auto 7px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      color: $white;
+      border: 0; }
+   .btns {
+      padding-top: 22px;
+      text-align: center; } }

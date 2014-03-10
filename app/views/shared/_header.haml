@@ -1,0 +1,22 @@
+/ Navigation
+%nav#top-bar
+  #top-left
+    %h1#logo
+      %a{:href => "#"} Operation Jam Beta
+    %a#feedback-link{:href => "#"} Send us feedback!
+  #top-right
+    #top-account
+      //%img#header-avatar{:alt => "", :src => "../../assets/avatar-header.jpg"}/
+      //%a.account-link{:href => "#"} Hi, Lillyanka!
+      //%a.logout-link{:href => "#"} (Logout)
+      %a#signin-open.account-link{:href => "#"} Sign in
+    #header-upload
+      %a{:href => "#"}
+        %span.plus-sign
+        %span Add new
+        %span.down-arrow
+    #search-form
+      %input#search-box{:name => "search", :placeholder => "Search", :type => "text"}/
+  / /top-right
+/ End Navigation
+

@@ -1,0 +1,21 @@
+.popup.vsmall-popup
+  = close_link
+  = popup_title 'Password Reset'
+  
+  .sign-form
+    = semantic_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f|
+      .column
+        = f.inputs do
+          = f.input :reset_password_token, :as => :hidden
+          .row
+            .text
+              .corner
+              .input.email.optional
+                = f.input :password, :label => false, :placeholder => 'Password'
+          .row
+            .text
+              .corner
+              .input.email.optional
+                = f.input :password_confirmation, :label => false, :placeholder => 'Confirm Password'
+        .password-reset-btn
+          = f.submit 'Change my password'

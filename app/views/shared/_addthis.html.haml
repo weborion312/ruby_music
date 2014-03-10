@@ -1,0 +1,14 @@
+#toolbox
+  .addthis_toolbox.addthis_default_style
+    %a.addthis_button_facebook
+    %a.addthis_button_twitter
+    %a.addthis_button_myspace
+    %a.addthis_button_tumblr
+    %a.addthis_button_google_plusone
+    %a.addthis_button_compact
+
+%script{:src => "http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-50219e1d1e5ab756", :type => "text/javascript"}
+
+:javascript
+  var addthis_config = {"data_track_addressbar":true};
+  window.addthis.toolbox("#toolbox")

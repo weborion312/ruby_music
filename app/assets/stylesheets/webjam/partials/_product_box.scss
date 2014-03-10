@@ -1,0 +1,29 @@
+.products-box{
+   padding:4px 5px;
+   background:#383838;
+   box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+   height:1%; overflow:hidden;
+   position:relative;
+   margin-bottom:8px;
+   .edit{
+     /*background: asset-url('design/icons/edit.png', 'image') no-repeat scroll 6px 0 transparent;*/
+     display: block;
+     float: right;
+     height: 15px;
+     margin: 1px 6px 0 0;
+     /*text-indent: -9999px;*/
+     /*width: 15px;*/
+     padding: 0 0 0 6px;
+     border-left: 1px solid #777777;
+	 text-transform: capitalize;
+	 background: none;
+    }
+   .visual{
+      float:left;
+      padding-right:8px; }
+   .visual img{
+      display:block; }
+   .text-holder{
+      height:1%; overflow:hidden; }
+   span{
+      display:block;} }

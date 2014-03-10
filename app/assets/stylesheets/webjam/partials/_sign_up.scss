@@ -1,0 +1,28 @@
+.oauth, #legalese {
+   margin:0 -20px 20px;
+   padding:10px 20px;
+   background:darken($grey_dark_transparent, 5%); }
+#legalese {
+   height:100px;
+   overflow-y:scroll;
+   overflow-x:hidden; }
+.oauth {
+   text-align:center;
+   .signin {
+      display:inline-block;
+      width:154px;
+      height:25px;
+      text-indent:-9001px;
+      margin: 2px;
+      &.twitter {
+         background:asset-url('design/twitter-sign-in.png', 'image') no-repeat; }
+      &.facebook {
+         background:asset-url('design/facebook-sign-in.png', 'image') no-repeat; }
+      &.myspace {
+         background:asset-url('design/myspace-sign-in.png', 'image') no-repeat; }
+      &:hover {
+         background-position:left center; }
+      &:active {
+         background-position:left bottom; } }
+   p {
+      margin-bottom:10px; } }

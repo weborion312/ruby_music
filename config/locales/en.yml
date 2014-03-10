@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    attributes:
+      user:
+        age_accepted: 'I am at least 13 years old'
+      track:
+        private: Private?
+        name: Title

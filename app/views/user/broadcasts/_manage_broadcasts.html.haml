@@ -1,0 +1,22 @@
+.title.orange.text-left
+  = link_to '(Click to Manage)', user_broadcasts_url, :class => 'edit-broadcast'
+  %h2 Broadcasts
+.popup-holder
+  .broadcast
+    - if recent_broadcasts.present?
+      .products-block
+        .holder.scrollable
+          .scroll-content
+            %ul.products-list
+              - recent_broadcasts.each do |broadcast|
+                %li
+                  .products-box
+                    .visual
+                      - if broadcast.image.present?
+                        = link_to (image_tag broadcast.image.img64.url, :width => '43', :height => '45'), '#!'+broadcast_path(broadcast)
+
+                    = link_to 'edit', edit_user_broadcast_path(broadcast), :class => 'edit'
+                  .text-holder
+                    - if broadcast.title.present?
+                      %span= broadcast.title
+    //= link_to 'Upload', new_user_broadcast_path, :class => 'profile_upload_button'

@@ -1,0 +1,36 @@
+.popup
+  = close_link
+  = popup_title 'Operation Jam Sign Up'
+  = flashes :notice, :error, :warning, :alert
+            
+  .sign-form
+    = simple_form_for(resource, :as => resource_name, :url => main_app.new_user_registration_path, :html => { :class => resource.errors.present? ? 'errors' : nil }) do |f|
+
+      %fieldset
+        .column
+          - unless session.include?('oauth')
+            %h3 Sign in with...
+            %ul.social
+              - User.omniauth_providers.each do |provider|
+                %li.active
+                  %a{:href => omniauth_authorize_path(:user, provider)}
+                    = image_tag "design/ico-#{provider}.png", :height => "130", :width => "66"
+
+            %br/
+            %h3 Or
+            %br/
+          = registration_title session
+          = render :partial => 'form_fields', :locals => {:f => f}
+        .text-holder
+          %h2 Terms and Conditions
+          .terms
+            .holder.scrollable
+              .scroll-content
+                = @t_and_c.nil? ? '' : raw(@t_and_c.content)
+          .row
+            = f.input :terms_and_conditions_accepted, :label => 'I accept these terms and conditions',:as => :boolean, :html_input => {:id => 'lbl03'}
+          .row
+            %label{:for => "lbl02"}
+            = f.input :age_accepted, :label => 'I am at least 13 years old', :html_input => {:id => 'lbl02'}
+          .btns
+            = f.submit 'Sign up'

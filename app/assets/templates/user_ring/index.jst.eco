@@ -1,0 +1,3 @@
+<a href="#!/profiles/<%= @user.username %>">
+  <img src="<%= @user.active_avatar_url %>">
+</a>

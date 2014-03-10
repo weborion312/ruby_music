@@ -1,0 +1,23 @@
+.popup.small-popup.manage-tracks
+  = close_link
+  = popup_title current_user.username
+  .title.green.text-left
+    %h2 Manage Your Tracks
+  .popup-holder
+    .products-block
+      .holder.scrollable
+        .scroll-content
+          %ul.products-list
+            - @tracks.each do |track|
+              %li
+                .products-box
+                  .visual
+                    = image_tag track.artwork.img64.url, :width => '43', :height => '45' if track.artwork.present?
+                  = link_to 'edit', edit_user_track_path(track), :class => 'edit', :title => 'Edit'
+                  = button_to "Delete", user_track_path(track), :method => :delete, :class => :destroy, :data => {:confirm => "Are you sure?"}, :title => 'Delete'
+
+                  .text-holder
+                    %span= track.artist if track.artist.present?
+                    %span= "#{track.duration} is the track duration" if track.duration.present?
+                    %span= track.tags if track.tags.present?
+    = link_to 'Upload', new_user_track_path, :class => 'profile-upload-button' 

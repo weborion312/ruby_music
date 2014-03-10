@@ -1,0 +1,66 @@
+/*
+Syntax error: Invalid CSS after "..."compass/reset"": expected selector or at-rule, was "@import "compas..."
+        on line 2 of /Users/willmarshall/Projects/webjam/app/assets/stylesheets/sass/imports.scss
+
+1: @import "compass/reset"
+2: @import "compass/css3/opacity"
+
+Backtrace:
+/Users/willmarshall/Projects/webjam/app/assets/stylesheets/sass/imports.scss:2
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/scss/parser.rb:898:in `expected'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/scss/parser.rb:841:in `expected'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/scss/parser.rb:27:in `parse'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/engine.rb:320:in `_to_tree'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/engine.rb:293:in `_render'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/engine.rb:241:in `block in render'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/util.rb:297:in `silence_sass_warnings'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/engine.rb:241:in `render'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:319:in `update_stylesheet'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:181:in `block (2 levels) in update_stylesheets'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `each'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:175:in `block in update_stylesheets'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `each'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin/compiler.rb:173:in `update_stylesheets'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin.rb:81:in `update_stylesheets'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin.rb:54:in `check_for_updates'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/sass-3.1.7/lib/sass/plugin/rack.rb:51:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/warden-1.0.5/lib/warden/manager.rb:35:in `block in call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/warden-1.0.5/lib/warden/manager.rb:34:in `catch'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/warden-1.0.5/lib/warden/manager.rb:34:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/etag.rb:23:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/conditionalget.rb:25:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/session/abstract/id.rb:195:in `context'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/session/abstract/id.rb:190:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/activerecord-3.1.0/lib/active_record/query_cache.rb:62:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/activerecord-3.1.0/lib/active_record/connection_adapters/abstract/connection_pool.rb:477:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/activesupport-3.1.0/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rails-dev-tweaks-0.5.0/lib/rails_dev_tweaks/granular_autoload/middleware.rb:34:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/sendfile.rb:101:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/railties-3.1.0/lib/rails/rack/logger.rb:13:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/methodoverride.rb:24:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/runtime.rb:17:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/activesupport-3.1.0/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/lock.rb:15:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/actionpack-3.1.0/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/railties-3.1.0/lib/rails/engine.rb:455:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/railties-3.1.0/lib/rails/rack/content_length.rb:16:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/railties-3.1.0/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/willmarshall/.rvm/gems/ruby-1.9.2-p290-patched@webjam/gems/rack-1.3.4/lib/rack/handler/webrick.rb:59:in `service'
+/Users/willmarshall/.rvm/rubies/ruby-1.9.2-p290-patched/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/willmarshall/.rvm/rubies/ruby-1.9.2-p290-patched/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/willmarshall/.rvm/rubies/ruby-1.9.2-p290-patched/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Syntax error: Invalid CSS after \"...\"compass/reset\"\": expected selector or at-rule, was \"@import \"compas...\"\A         on line 2 of /Users/willmarshall/Projects/webjam/app/assets/stylesheets/sass/imports.scss\A \A 1: @import \"compass/reset\"\A 2: @import \"compass/css3/opacity\""; }

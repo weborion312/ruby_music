@@ -1,0 +1,27 @@
+.popup.vsmall-popup
+  = close_link
+  = popup_title 'Operation Jam Sign In'
+  = flashes :notice, :error, :warning, :alert
+  .sign-form
+    = simple_form_for(resource, :as => resource_name, :url => main_app.user_session_path) do |f|
+      %fieldset
+        .column
+          %h3 Sign in with...
+          %ul.social
+            - User.omniauth_providers.each do |provider|
+              %li.active
+                %a{:href => omniauth_authorize_path(:user, provider), :id => provider}
+                  = image_tag "design/ico-#{provider}.png", :height => "130", :width => "66"
+          %h3 Or
+          .row
+            .text
+              = f.input :email, :label => false, :placeholder => 'Email'
+          .row
+            .text
+              = f.input :password, :label => false, :placeholder => 'Password'
+          .row
+            - if devise_mapping.rememberable?
+              = f.input :remember_me, :as => :boolean
+          .password-reset-btn
+            = f.submit 'Sign In'
+            = link_to 'Forgot your password?', '#!' + new_user_password_path

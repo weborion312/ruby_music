@@ -1,0 +1,32 @@
+.social {
+   overflow:hidden;
+   list-style:none; 
+   margin:0;
+   li {
+      float:left;
+      margin-right:5px; }
+   li.twitter{
+     height: 65px;
+     text-indent: -9999px;
+     width: 65px;
+     background: url("design/ico-twitter.png") no-repeat 0 -65px;
+      }
+   li.facebook{
+     height: 65px;
+     text-indent: -9999px;
+     width: 65px;
+     background: url("design/ico-facebook.png") no-repeat 0 -65px;
+      }
+   li.myspace{
+     height: 65px;
+     text-indent: -9999px;
+     width: 65px;
+     background: url("design/ico-myspace.png") no-repeat 0 -65px;
+      }
+      
+   a {
+      float:left;
+      height:65px;
+      overflow:hidden; }
+   a:hover img, .active img {
+      margin-top:-65px; } }

@@ -1,0 +1,43 @@
+.popup
+  = close_link
+  = popup_title @profile.username
+  %h2.edit-link
+    - if @profile == current_user
+      = link_to '(Edit your profile)', root_url + '#!' + edit_profile_path
+  .popup-holder
+    .profile-holder
+      .row
+        .visual
+          = image_tag @profile.active_avatar_url, :width => '117', :height => '117'
+        .text-holder
+          %p= @profile.interests
+
+        %dl.info
+          - if @profile == current_user
+            %dt Email :
+            %dd= mail_to @profile.email
+            %br
+          %dt Location :
+          %dd= @profile.location
+
+        - if @profile == current_user
+          %h2
+            %a{:href => "#"} Social Connections (click to add)
+          %ul.social
+            - User.omniauth_providers.each do |provider|
+              - if @providers.include?(provider.to_s)
+                %li{ :class => [provider] }
+                  You have authenticated with #{provider.to_s.humanize}
+              - else
+                %li
+                  %a{:href => omniauth_authorize_path(:user, provider)}
+                    = image_tag "design/ico-#{provider}.png", :height => "130", :width => "66"
+        .link-holder
+          %form{:action => "#"}
+            %fieldset
+              .row
+                %label Profile URL:
+                = text_field_tag :share_url, root_url + '#!' + profile_path(@profile), :class => 'text', :type => 'text', :id => 'clip_text'
+              = render_addthis
+  = render :partial => 'manage_tracks', :locals => {:profile => @profile}
+  = render :partial => 'manage_broadcasts', :locals => {:profile => @profile, :broadcast => @broadcast}

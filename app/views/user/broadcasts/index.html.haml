@@ -1,0 +1,9 @@
+.popup.small-popup.manage-broadcasts
+  = close_link
+  .title.pink
+    %h2
+      = current_user.username
+  .title.orange.text-left
+    %h2 Manage Your Broadcasts
+  .popup-holder
+  //= render :partial => 'manage_tracks', :locals => {:broadcast => @broadcast}

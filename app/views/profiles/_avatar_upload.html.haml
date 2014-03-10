@@ -1,0 +1,17 @@
+%hr
+%fieldset
+  %h2 Edit Avatar
+  %p
+    = image_tag(user.avatar.img64.url, :width => '50', :height => '50') if user.avatar?
+    - unless user.new_record?
+      = f.check_box :remove_avatar
+      = f.label :remove_avatar, "remove avatar"
+  %p
+    = f.label :avatar, "Upload new avatar:"
+    %br/
+  .file
+    = f.file_field :avatar, :class => 'button'
+    = f.hidden_field :avatar_cache
+    .button-fake
+      %input{:class => "fake-input", :placeholder => "Choose File...", :type => "text"}
+      %span.btn Browse...

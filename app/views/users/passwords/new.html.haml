@@ -1,0 +1,11 @@
+.popup.vsmall-popup
+  = close_link
+  = popup_title 'Forgot your password?'
+  .password-reset-form
+    = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+      .row
+        .text
+          .corner
+          = f.input :email, :label => false, :placeholder => 'Email'
+      .btns
+        = f.submit 'Send me reset password instructions'

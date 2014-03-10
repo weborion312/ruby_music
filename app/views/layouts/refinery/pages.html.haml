@@ -1,0 +1,9 @@
+.popup
+  = close_link
+  = flashes :notice, :error, :warning, :alert
+
+  #content
+    = yield
+
+  :javascript
+    Analytical.track(#{request.path.to_json});

@@ -1,0 +1,32 @@
+.popup.small-popup
+  = close_link
+  .title.orange
+    %h2= @broadcast.title
+  .title.orange.text-left
+    - if @broadcast.user == current_user
+      = link_to '(Edit Broadcast)', '#!' + edit_user_broadcast_path(@broadcast), :class => 'edit-broadcast'
+    %h3= @broadcast.description || 'No description'
+  .popup-holder
+    .broadcast-box.track-box
+      .holder
+        .visual
+          = link_to 'play', 'javascript:', :class => 'btn-play play', :'data-broadcast_id' => @broadcast.id
+          = link_to 'pause', 'javascript:', :class => 'btn-pause pause', :style => 'display:none;'
+          %span.frame
+            -if @broadcast.image.present?
+              = image_tag @broadcast.image.img128.url, :alt => @broadcast.title
+        .text-holder
+          %dl.info
+            %dt Title:
+            %dd=  @broadcast.title.present? ? @broadcast.title : 'No Title'
+            %dt Uploader:
+            %dd= link_to @broadcast.user.username, profile_path(@broadcast.user)
+            %dt Uploaded:
+            %dd= "#{time_ago_in_words @broadcast.created_at} ago"
+        .link-holder
+          %form{:action => "#"}
+            %fieldset
+              .row
+                = text_field_tag :share_url, root_url + '#!' + broadcast_path(@broadcast), :class => 'text', :type => 'text', :id => 'clip_text'
+              %br
+              = render_addthis

@@ -1,0 +1,31 @@
+.popup.small-popup
+  = close_link
+  .title.green
+    %h2= @track.name
+  .title.green.text-left
+    - if @track.user == current_user
+      = link_to '(Edit Track)', '#!' + edit_user_track_path(@track), :class => 'edit-track'
+    %h3= @track.description || 'No description'
+  .popup-holder
+    .track-box
+      .holder
+        .visual
+          = link_to 'play', 'javascript:', :class => 'btn-play play', :'data-track_id' => @track.slug
+          = link_to 'pause', 'javascript:', :class => 'btn-pause pause', :style => 'display:none;'
+          %span.frame
+            = image_tag @track.artwork.img128.url, :alt => @track.name if @track.artwork.present?
+        .text-holder
+          %dl.info
+            %dt Tags:
+            %dd=  @track.tags.present? ? @track.tags : 'No Tags'
+            %dt Uploader:
+            %dd= link_to @track.user.username, profile_path(@track.user)
+            %dt Uploaded:
+            %dd= "#{time_ago_in_words @track.created_at} ago"
+        .link-holder
+          %form{:action => "#"}
+            %fieldset
+              .row
+                = text_field_tag :share_url, root_url + '#!' + track_path(@track), :class => 'text', :type => 'text', :id => 'clip_text'
+              %br
+              = render_addthis

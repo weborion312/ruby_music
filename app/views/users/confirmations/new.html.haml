@@ -1,0 +1,11 @@
+.popup.small-popup
+  = close_link
+  = popup_title 'Resend confirmation instructions'
+  = flashes :notice, :error, :warning, :alert
+  .sign-form
+    = simple_form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :email, :required => true
+      .form-actions
+        = f.button :submit, "Resend confirmation instructions"

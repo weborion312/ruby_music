@@ -1,0 +1,39 @@
+.text {
+   height: 47px;
+   margin-right: 11px;
+   position: relative;
+   padding: 0 0 0 9px;
+   background: none;
+   /* &after { */
+   /*    content: ""; */
+   /*    display: block; */
+   /*    clear: both; } */
+   .corner {
+      width: 11px;
+      height: 32px;
+      position: absolute;
+      text-indent: -9999px;
+      overflow: hidden;
+      top: 0;
+      right: -11px;
+      background: asset-url('design/bg-text.png', 'images') no-repeat 100% 100%; }
+   input {
+      &[type='password'], &[type='text'] { 
+        width: 285px; 
+        background: none repeat scroll 0 0 #1B1B1B;
+        border: 2px solid #000000;
+        box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.35);
+        color: #FFFFFF;
+        float: left;
+        font-size: 12px;
+        height: 22px;
+        line-height: 22px;
+        padding: 5px 0 5px 5px;
+      } 
+   }
+}
+
+span.error{
+   color: #ff0000;
+} 
+

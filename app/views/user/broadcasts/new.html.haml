@@ -1,0 +1,28 @@
+.popup.small-popup.new-broadcast
+  = close_link
+  .title.pink
+    %h2
+      = current_user.username
+  = flashes :notice, :error, :warning, :alert
+  .title.orange.text-left
+    %h3 Broadcast Upload
+  .popup-holder
+    .track-form.broadcast-form
+      = simple_form_for [:user, @broadcast], :html => { :multipart => true } do |f|
+        = f.error_notification
+        = render "shared/error_messages", :target => @broadcast
+        %fieldset
+          .row
+            = f.input :title, :required => false, :input_html => {:class => 'text-field'}
+          .simple-view
+            .row
+              = f.label :image, "Upload broadcast image", {:class => "upload"}
+              .file
+                = f.file_field :image, :class => 'button'
+                = f.hidden_field :image_cache
+                .button-fake
+                  %input{:class => "fake-input", :placeholder => "Choose File...", :type => "text"}
+                  %span.btn Browse...
+            .row
+              = f.input :description, :input_html => {:class => 'text-field'}
+        = f.button :submit, :class => 'btn-update', :value => "Create broadcast"

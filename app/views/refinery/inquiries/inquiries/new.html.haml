@@ -1,0 +1,39 @@
+= render :partial => "/refinery/content_page"
+.popup-holder
+  .edit-form.contact-form
+    = simple_form_for [refinery, :inquiries, @inquiry] do |f|
+      = render :partial => "/refinery/admin/error_messages", |
+        :locals => {                                         |
+          :object => @inquiry,                               |
+          :include_object_name => true                       |
+        }                                                    |
+      .row
+        .row-text
+          .corner
+          = f.input :name, :required => true, :label => false, :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
+      .row.message
+        = f.input :message, :required => true, :label => false, :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
+
+      .row
+        .row-text
+          .corner
+          = f.input :email, :required => true, :label => false, :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry')
+      .row
+        .row-text
+          .corner
+          = f.input :phone, :required => false, :label => false, :placeholder => 'Web/Social'
+
+
+      .row
+        %input.btn{:type => "submit", :value => "Send", :name => 'commit'}
+      = link_to t('.privacy_policy'), "/pages/privacy-policy", :id => "privacy_link" if Refinery::Inquiries.show_contact_privacy_link
+      
+      .row.social-buttons
+        %span Connect with us
+        %a.facebook-link{:href => "http://www.facebook.com/OperationJam", :target => "_blank"}
+          = image_tag "design/icons/facebook.png", :height => "24", :width => "24"
+        %a.twitter-link{:href => "http://www.twitter.com/operationjam", :target => "_blank"}
+          = image_tag "design/icons/twitter.png", :height => "24", :width => "24"
+
+  .opjam-logo
+    =image_tag "design/logo-narrow.png"

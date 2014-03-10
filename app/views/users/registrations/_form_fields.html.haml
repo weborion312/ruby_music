@@ -1,0 +1,13 @@
+.row
+  .text
+    = f.input :email, :label => false, :required => false, :placeholder => 'Email'
+.row
+  .text
+    = f.input :username, :label => false, :required => false, :placeholder => 'Username'
+- if resource.password_required?
+  .row
+    .text
+      = f.input :password, :label => false, :required => false, :placeholder => 'Password'
+  .row
+    .text
+      = f.input :password_confirmation, :label => false, :placeholder => 'Confirm Password'

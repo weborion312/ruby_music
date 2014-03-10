@@ -1,0 +1,102 @@
+.popup.large-popup.edit-broadcast
+  = close_link
+  .title.orange
+    %h2
+      = @broadcast.title
+  = flashes :notice, :error, :warning, :alert
+  .popup-holder
+    .left
+      %h2{:style => 'margin:16px 0px 9px;'} Edit Broadcast Information
+      .track-form.broadcast-form
+        = simple_form_for [:user, @broadcast], :html => {:multipart => true} do |f|
+          = render "shared/error_messages", :target => @broadcast
+          %fieldset
+            .row.info-fields
+              = f.input :title, :required => false, :input_html => {:class => 'text-field'}
+              = f.input :description, :input_html => {:class => 'text-field'}
+              
+            - if @broadcast.image.blank?
+              .row
+                = f.input :image
+            %h2 Broadcast Image
+            - if !@broadcast.image.blank?
+              .row
+                .broadcast-box
+                  .holder
+                    .visual
+                      = image_tag(@broadcast.image.img128.url) if @broadcast.image?
+                    .short-row
+                      = f.label :image, "New Image"
+                      .file.upload
+                        = f.file_field :image, :class => 'button'
+                        = f.hidden_field :image_cache
+                        .button-fake
+                          %input{:class => "fake-input", :placeholder => "Choose File...", :type => "text"}
+                          %span.btn Browse...
+                      .file.remove
+                        = f.label :remove_image, "Remove"
+                        - unless @broadcast.new_record?
+                          = f.check_box :remove_image
+                      
+            
+            %h2{:style => 'margin:15px 0px;'} Select tracks for broadcast
+            .products-block{:style => 'height:177px; padding: 0 11px 5px 17px'}
+              .holder.scrollable{:style => 'height:177px'}
+                .scroll-content
+                  %ul.row.products-list
+                    - (current_user.tracks.public - @broadcast.tracks).each do |track|
+                      %li
+                        .products-box
+                          .visual
+                            = image_tag track.artwork.img64.url, :width => '43', :height => '45' if track.artwork.present?
+                          = link_to '+add', 'javascript:', :class => 'add', :style => 'border:none;margin:15px;float:right;font-size:16px;', :'data-update-url' => "#{user_broadcast_add_path(@broadcast.id, track.id)}"
+                          .text-holder
+                            - if track.name.present?
+                              %span= track.name
+
+            
+          = f.button :submit, :class => 'btn-update', :value => "Update"
+        
+    .right
+      %h2{:style => 'margin:16px 0px 25px;'} Tracks added to broadcast (drag tracks to sort)
+      .products-block{:style => 'height:229px;margin:25px 0px 100px 3px; padding: 5px 11px 5px 17px'}
+        .holder.scrollable{:style => 'height:229px'}
+          .scroll-content
+            %ul#sortable_tracks.row.products-list{"data-update-url" => "#{user_broadcast_sort_path(@broadcast.id)}"}
+              - @broadcast.tracks.order("position").each do |track|
+                = content_tag_for :li, track do
+                  .products-box
+                    .visual
+                      = image_tag track.artwork.img64.url, :width => '43', :height => '45', :class => 'handle' if track.artwork.present?
+                    = link_to '-remove', 'javascript:', :class => 'remove', :style => 'border:none;margin:15px;float:right;font-size:16px;', :'data-update-url' => "#{user_broadcast_remove_path(@broadcast.id, track.id)}"
+                    .text-holder
+                      - if track.name.present?
+                        %span= track.name
+
+:css
+  #sortable_tracks .handle {
+    font-size: 12px;
+    color: #777;
+    cursor: move;
+  }
+
+:javascript
+  $(function() {
+    $("#sortable_tracks").sortable({
+      axis: 'y',
+      handle: '.handle',
+      update: function() {
+        $.post($(this).data('update-url'), $(this).sortable('serialize'));
+      }
+    });
+   $('.add').click(function() {
+     $.post($(this).data('update-url'));
+     var url = $(this).data('update-url').replace(/\/add\/\d+/,'')+'/edit'
+     Opjam.popup.fetch(url)
+   });
+   $('.remove').click(function() {
+     $.post($(this).data('update-url'));
+     var url = $(this).data('update-url').replace(/\/remove\/\d+/,'')+'/edit'
+     Opjam.popup.fetch(url)
+   });
+  });

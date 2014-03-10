@@ -1,0 +1,38 @@
+.profile {
+   width:100%;
+   .products-block {
+      height:119px;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-image: none;
+      border: 2px solid #000000;
+      box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 0.35);
+      width: 570px;
+      padding: 17px 11px 17px 17px;
+      .holder {
+         height:125px;
+        } } }
+
+.broadcasts-upload-button, .profile-upload-button {
+   background: none repeat scroll 0 0 rgba(133, 174, 47, 0.5) !important;
+   border: 2px solid rgba(48, 66, 9, 0.5) !important;
+   box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.7) !important;
+   float:right;
+   display:block;
+   height:29px;
+   width:77px;
+   font-size: 13px;
+   line-height: 29px;
+   text-align: center;
+   }
+   
+.edit-form .row .visual a span{
+   display: block; 
+   padding: 3px 0 5px; 
+   background: rgba(0,0,0,0.5); 
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   &:hover{
+     text-decoration: underline;
+   }
+}

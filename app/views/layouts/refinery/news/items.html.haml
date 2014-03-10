@@ -1,0 +1,7 @@
+#content
+  = close_link
+  = flashes :notice, :error, :warning, :alert
+  .popup
+    = yield
+  #left
+    = yield :body_content_length

@@ -1,0 +1,12 @@
+.popup.vsmall-popup
+  = close_link
+  = popup_title 'Re-acceptance Page'
+  .acceptance-reset-form
+    = simple_form_for @user, :url => acceptance_url do |f|
+      .text-holder
+        .terms
+          .holder.scrollable
+            .scroll-content
+              = @t_and_c.nil? ? "" : raw(@t_and_c.content)
+      .btns
+        = f.submit "I accept the new Terms & Conditions"

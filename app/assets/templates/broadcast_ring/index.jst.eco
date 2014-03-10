@@ -1,0 +1,5 @@
+<a href="#!/broadcasts/<%= @broadcast.id %>">
+  <img alt="<%= @broadcast.id %>" src="<%= @broadcast.image.url %>">
+</a>
+<a href="javascript:" class="play" data-broadcast_id="<%= @broadcast.id %>">Play</a>
+<a href="javascript:" class="pause" style="display: none; ">Pause</a>

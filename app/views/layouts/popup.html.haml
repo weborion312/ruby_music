@@ -1,0 +1,21 @@
+.overlay
+#signin-popup.popup
+  #logo-small
+    %img{:alt => "", :src => "../../assets/images/logo-small.png"}/
+  %a#close.cancel-button.close Close
+  .popup-title
+    %h2 Sign in to Operation Jam
+  #signin-form
+    %form{:action => "", :method => "post"}
+      %fieldset
+        %input{:name => "username", :placeholder => "Username", :type => "text"}/
+        %input{:name => "email", :placeholder => "Email", :type => "email"}/
+        .buttons
+          %a{ :class => "cancel close", :href => "#"}/
+          %a{ :class => "submit", :href => "#"}/
+  #signin-social
+    %h3 Or, sign in with...
+    %a#fb-signin Facebook
+    %a#myspace-signin Myspace
+    %a#twitter-signin Twitter
+/ /signin-popup

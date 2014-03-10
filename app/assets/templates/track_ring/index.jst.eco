@@ -1,0 +1,5 @@
+<a href="#!/tracks/<%= @track.slug %>">
+  <img alt="<%= @track.slug %>" src="<%= @track.artwork.artwork.url %>">
+</a>
+<a href="javascript:" class="play" data-track_id="<%= @track.slug %>">Play</a>
+<a href="javascript:" class="pause" style="display: none; ">Pause</a>

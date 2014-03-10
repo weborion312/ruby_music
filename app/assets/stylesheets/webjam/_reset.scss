@@ -1,0 +1,35 @@
+/* General Reset */
+html {
+   height: 100%; }
+body {
+   height: 100%;
+   margin: 0;
+   color: #fff;
+   background: #000;
+   min-width: 1300px;
+   font: 12px Arial, Helvetica, sans-serif; }
+img {
+   border-style: none; }
+input, textarea, select {
+   color: #fff;
+   vertical-align: middle;
+   font: 100% Arial, Helvetica, sans-serif; }
+form, fieldset {
+   margin: 0;
+   padding: 0;
+   border-style: none; }
+blockquote {
+   quotes: none; }
+q {
+   quotes: none;
+   &:before, &:after {
+      content: ''; } }
+a {
+   color: #fff;
+   text-decoration: none;
+   &:hover {
+      text-decoration: underline; }
+   &:focus {
+      outline: none; } }
+input:focus, textarea:focus, select:focus {
+   outline: none; }

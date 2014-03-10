@@ -1,0 +1,82 @@
+#player{
+  background-image: url("/assets/design/player/background.png");
+  background-repeat: no-repeat;
+  background-size: 415px 70px;
+  float: right;
+  height: 70px;
+  position: relative;
+  right: 0;
+  top: 5px;
+  width: 415px;
+   .info-bar {
+     float: left;
+     font-family: 'Electrolize',sans-serif;
+     font-size: 12px;
+     height: 29px;
+     left: 57px;
+     overflow: hidden;
+     position: relative;
+     text-align: left;
+     top: 21px;
+     max-width: 195px;
+     width: auto;  }
+     .time{
+       font-family: 'Electrolize',sans-serif;
+       font-size: 11px;
+       position: absolute;
+       right: 105px;
+       top: 21px;
+     }
+   .seek-bar {
+      width: 292px;
+      height: 10px;
+      position: absolute;
+      top: 46px;
+      left: 62px;
+      .ui-slider-handle {
+         display: block;
+         position: absolute;
+         margin: -1px 0 0 -5px;
+         width: 11px;
+         height: 11px;
+         background: image-url('design/player/seek-handle.png');
+         &:focus {
+            outline:none; } }
+      .ui-slider-range {
+         position: absolute;
+         height: 10px;
+         margin-left: -3px;
+         padding-right: 3px;
+         background: image-url('design/player/progress.png');
+         background-size: 408px; } }
+   .volume-bar {
+     height: 10px;
+     position: absolute;
+     right: 40px;
+     top: 24px;
+     width: 38px;
+      .ui-slider-handle {
+         display: block;
+         position: absolute;
+         margin: 0 0 0 -6px;
+         height: 12px;
+         width: 12px;
+         background: image-url('design/player/volume-handle.png');
+         &:focus {
+            outline:none; } } }
+   .controls {
+      position: absolute;
+      top: 22px;
+      left: -14px;
+      height: 24px;
+      width: 100px;
+      .prev, .next, .play, .pause {
+         display: inline-block;
+         height: 24px;
+         position: absolute;
+         text-indent: -9001px;
+         background: image-url('design/player/controls.png'); }
+      .prev { width:29px; }
+      .next { width:28px; background-position: right top; right: 0;}
+      .play { width:22px; background-position: -47px top; left: 41px;}
+      .pause{ width:17px; background-position: -77px top; left: 43px;} } }

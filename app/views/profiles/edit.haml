@@ -1,0 +1,40 @@
+.popup.small-popup
+  = close_link
+  = popup_title @user.username
+  = flashes :notice, :error, :warning, :alert
+  .popup-holder
+    %h2 Edit Account Information
+    .edit-form.edit-profile
+      = simple_form_for @user, :url => profile_url do |f|
+        = render "shared/error_messages", :target => @user
+        .row
+          .visual
+            %a{:href => "#", :class => "edit-avatar"} 
+              %span 
+                = f.label :avatar, "Click to edit"
+            = image_tag @user.active_avatar_url, :width => '128', :height => '128'
+          = f.input :interests, :label => false, :input_html => {:cols => 30, :rows => 10, :placeholder => "Interests"}
+        .row
+          .row-text
+            .corner
+            = f.input :full_name, :label => false, :input_html => {:placeholder => "Full Name"}
+          .row-text
+            .corner
+            = f.input :location, :label => false, :input_html => {:placeholder => "Location"}
+        .row
+          .row-text
+            .corner
+            = f.input :username, :label => false, :input_html => {:placeholder => "Username"}
+          %label Birth Date
+        .row
+          .row-text
+            .corner
+            = f.input :email, :label => false, :disabled => true
+          = f.input :birth_date, :label => false, :as => :date, :order => [:month, :day, :year], :start_year => Date.today.year - 13, :end_year => Date.today.year - 100
+          = f.hidden_field :terms_and_conditions_accepted, :value => '1'
+          
+        = render :partial => 'avatar_upload', :locals => {:f => f, :user => @user}
+
+        .row.btns
+          %input.btn{:type => "submit", :value => "Save", :name => 'commit'}
+          = link_to "Cancel", '#!' + profile_path(current_user), :class => 'btn-link cancel-btn'

@@ -1,0 +1,27 @@
+.popup
+  = close_link
+  .title.orange
+    %h2
+      = @broadcast.title
+  %h2.edit-link
+    = link_to '(Edit this broadcast)', '#!' + edit_broadcast_path
+  .popup-holder
+    .broadcast-holder
+      .row
+        .visual
+          = image_tag @broadcast.image.url, :width => '117', :height => '117'
+        .text-holder.broadcast-info
+          %dl.info
+            %dt Title :
+            %dd= @broadcast.title
+            %dt Description:
+            %dd= @broadcast.description
+            %br
+          .link-holder
+            %form{:action => "#"}
+              %fieldset
+                .row
+                  %label Broadcast URL:
+                  = text_field_tag :share_url, root_url + '#!' + broadcast_path(@broadcast), :class => 'text', :type => 'text', :id => 'clip_text'
+                = render :partial => 'shared/addthis'
+  = render :partial => 'manage_tracks', :locals => {:broadcast => @broadcast}

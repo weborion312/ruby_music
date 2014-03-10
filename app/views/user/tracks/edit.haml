@@ -1,0 +1,40 @@
+.popup.small-popup
+  = close_link
+  = popup_title @track.name
+  = flashes :notice, :error, :warning, :alert
+  .popup-holder
+    %h2 Edit Track Information
+    .track-form
+      = simple_form_for [:user, @track], :html => {:multipart => true} do |f|
+        = render "shared/error_messages", :target => @track
+        %fieldset
+          .row
+            = f.input :name, :required => false, :input_html => {:class => 'text-field'}
+          .row
+            = f.input :artist, :input_html => {:class => 'text-field'}
+          .row
+            = f.input :tags, :input_html => {:class => 'text-field'}
+          .row
+            = f.input :description, :input_html => {:class => 'text-field'}
+          %hr
+          %h2 Edit Track Artwork
+          - unless @track.artwork.blank?
+            .row
+              .track-box
+                .holder
+                  .visual
+                    = image_tag(@track.artwork.img128.url) if @track.artwork?
+                  .short-row
+                    = f.label :artwork, "Track image"
+                    .file
+                      = f.file_field :artwork, :class => 'button'
+                      = f.hidden_field :artwork_cache
+                      .button-fake
+                        %input{:class => "fake-input", :placeholder => "Choose File...", :type => "text"}
+                        %span.btn Browse...
+                    .file
+                      = f.label :remove_artwork, "Remove"
+                      - unless @track.new_record?
+                        = f.check_box :remove_artwork
+                    
+        = f.button :submit, :class => 'btn-update', :value => "Update"

@@ -1,0 +1,20 @@
+<div id="player">
+  <audio>
+    <source type="audio/mpeg" src="/tracks/<%= if @track then @track.get('slug')  %>.mp3"/>
+    <source type='audio/ogg; codecs="vorbis"' src="/tracks/<%= if @track then @track.get('slug')  %>.oga"/>
+  </audio>
+
+  <div class="info-bar"/>
+  <div class="volume-bar"/>
+  <div class="seek-bar"/>
+  <div class="time"/>
+
+  <div class="controls">
+    <a href="javascript:" class="play" data-bitly-type="bitly_hover_card">
+      Play
+    </a>
+    <a href="javascript:" class="pause" data-bitly-type="bitly_hover_card">
+      Pause
+    </a>
+  </div>
+</div>

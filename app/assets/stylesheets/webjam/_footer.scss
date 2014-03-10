@@ -1,0 +1,124 @@
+footer {
+  border: none;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 80px;
+  background: #262626;
+  z-index: 5000;
+  .left {
+    float: left;
+  }
+  .right {
+    float: left;
+  }
+  
+
+    nav.pages {
+      margin-top: 12px;
+      margin-left: 11px;
+      float: left;
+      ul {
+        @include horizontal-list;
+        li {
+          padding-right: 28px;
+          a{
+            font-family: 'Electrolize', sans-serif;
+          }
+        }
+      }
+    }
+  }
+
+  .logo {
+    float: left;
+    clear:both;
+    img {
+      height: 40px;
+      margin-left: 7px;
+    }
+  }
+  .middle{
+    left: 50%;
+    margin-left: -172px;
+    position: absolute;
+    width: 345px;
+    nav.plates {
+      float: left;
+      margin-top: 14px;
+      table {
+        width: 100%;
+        td {
+          padding: 0;
+          margin-right: 4px;
+          text-align: center;
+          a {
+            display: block;
+            height: 45px;
+            padding: 33px 5px 0;
+            text-align: center;
+            width: 55px;
+            font-family: 'Electrolize', sans-serif;
+						span{
+							display: none;
+						}
+						&:hover span{
+							display: block;
+						}
+            img {
+              height: 40px;
+            }
+          }
+          a:hover{
+						text-decoration: none;
+            img{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+td.tracks a{
+  background: image-url('design/buttons/tracks-gray.png') no-repeat center -20px;
+  &:hover{
+    background: image-url('design/buttons/tracks.png') no-repeat center -20px;
+  }
+}
+
+td.profiles a{
+  background: image-url('design/buttons/profiles-gray.png') no-repeat center -20px;
+  &:hover{
+    background: image-url('design/buttons/profiles.png') no-repeat center -20px;
+  }
+}
+
+td.broadcasts a{
+  background: image-url('design/buttons/broadcasts-gray.png') no-repeat center -20px;
+  &:hover{
+    background: image-url('design/buttons/broadcasts.png') no-repeat center -20px;
+  }
+}
+
+td.radios a{
+  background: image-url('design/buttons/radios-gray.png') no-repeat center -20px;
+  &:hover{
+    background: image-url('design/buttons/radios.png') no-repeat center -20px;
+  }
+}
+
+td.charts a{
+  background: image-url('design/buttons/charts-gray.png') no-repeat center -20px;
+  &:hover{
+    background: image-url('design/buttons/charts.png') no-repeat center -20px;
+  }
+}
+
+td.home a{
+  background: image-url('design/buttons/home-gray.png') no-repeat center -20px;
+  &:hover{
+    background: image-url('design/buttons/home.png') no-repeat center -20px;
+  }
+}
+

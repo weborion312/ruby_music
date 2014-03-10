@@ -1,0 +1,30 @@
+dl.track-meta-data {
+   dd {
+      width:238px; } }
+form#new_track {
+   li.file, li.boolean {
+      display:inline-block; }
+   li.file {
+      width:356px; }
+   li.boolean {
+      width:100px;
+      padding:0; } }
+#popup {
+   .artwork {
+      position:relative;
+      height:128px;
+      width:128px;
+      float:left;
+      margin:0 10px 10px 0;
+      a.play, a.pause {
+         background:asset-url('design/popup-play-pause.png', 'image');
+         display:block;
+         position:absolute;
+         top:50%;
+         left:50%;
+         margin-left:-21px;
+         margin-top:-21px;
+         text-indent:-9001px;
+         width: 42px;
+         height: 42px; }
+      a.pause {background-position:0 -42px; } } }
